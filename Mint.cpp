@@ -17,20 +17,25 @@ const int MOD = 1000000007;
 ll lcm(ll a, ll b){
     return (a*b)/(__gcd(a,b));
 }
-void solve(){
+void solve(){                                     // 2 concepts. simulating nC4 and LCM. 
+                                                  // nC4 is simulated using 4 for loops 
+                                                  // LCM = lowest common Multiple which is calculated as (a*b)/gcd(a,b).  gcd = greatest common diviser
     while(true){
         ll n,t; cin>>n>>t;
+     
         if(n==0 && t==0) break;
+     
         vector<ll> st(n);
         for(int i=0; i<n; i++){
             cin>>st[i];
         }
 
         while(t--){
+         
+            ll t1; cin>>t1;
             ll mx = 0;
             ll mn = 1e18;
 
-            ll t1; cin>>t1;
             for(int i=0; i<n; i++){
                 for(int j=i+1; j<n; j++){
                     for(int k=j+1; k<n; k++){
